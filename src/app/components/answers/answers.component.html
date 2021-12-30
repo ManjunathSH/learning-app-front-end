@@ -1,0 +1,17 @@
+<h3 class="heading">Answers</h3>
+
+<div class="wrapper">
+   <p>Question: {{question.questionText}}</p>
+
+   <div *ngFor="let answer of answers">
+       Answer: {{answer.answerText}}
+   
+
+   <video width="320" height="240" [src]="answer.answerUrl" controls>
+    Video not supported
+  </video>
+</div>
+
+  <button mat-raised-button (click)="addAnswer()" color="primary">Add Answer</button>
+
+</div>

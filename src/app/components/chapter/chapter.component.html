@@ -1,0 +1,10 @@
+<h3 class="heading">{{subject.subjectName}}</h3>
+
+<div class="wrapper">
+    <div class="first">
+        <mat-card class="card" *ngFor="let chapter of subject.chapters" (click)="onChapterClick(chapter)">
+            {{chapter.chapterName}}
+        </mat-card>
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<h3 class="heading">Boards</h3>
+
+<div class="wrapper">
+    <div class="boards">
+        <h3 class="heading">List of boards</h3>
+        <div class="boards-cards">
+            <mat-card [ngClass]="{'highlight': clickedBoard?.boardId === board.boardId}" class="card" *ngFor="let board of boards" (click)="onBoardClick(board)">
+                {{board.boardName}}
+            </mat-card>
+        </div>
+    </div>
+
+    <div *ngIf="showClass" class="classes">
+        <h4 class="heading">Select Class</h4>
+        <div class="classes-cards">
+            <mat-card class="class-card" *ngFor="let number of [1,2,3,4,5,6,7,8,9,10]" (click)="onClassClick(number)">
+                {{number}}
+            </mat-card>
+        </div>
+    </div>
+
+    
+
+</div>
+
+<div class="buttons">
+
+    <button mat-raised-button (click)="addBoard()" color="primary">Add Board</button>
+</div>
+
+<!-- 
+<nav>
+    <ul>
+       <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+       <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+       <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+    </ul>
+  <nav> -->

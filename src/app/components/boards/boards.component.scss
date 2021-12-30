@@ -1,0 +1,53 @@
+.card{
+    max-width: 10rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+
+.class-card{
+    max-width: 10rem;
+    min-width: 4rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.wrapper{
+    width: 100%;
+    overflow: auto;
+}
+
+.classes{
+    width: 60%;
+    float: left;
+  
+}
+
+.boards{
+    width: 40%;
+    float : left;
+}
+
+.classes-cards{
+    display: inline-flex;
+    flex-flow: wrap;
+}
+
+.boards-cards{
+    display: grid;
+}
+
+
+.heading {
+    margin: 2rem;
+    text-align: center;
+}
+
+
+.highlight{
+    background-color: grey;
+}
+
+.buttons{
+    margin: 2rem
+}

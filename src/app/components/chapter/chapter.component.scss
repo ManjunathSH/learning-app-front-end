@@ -1,0 +1,24 @@
+.wrapper {
+    width: 100%;
+
+    overflow: auto; 
+}
+.first {
+    width: 30%;
+    float:left; 
+}
+.second {
+    float: left; 
+}
+
+.heading {
+    margin: 2 rem;
+    text-align: center;
+}
+
+
+.card{
+    max-width: 10rem;
+    margin: 2rem;
+    text-align: center;
+}

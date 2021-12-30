@@ -1,0 +1,35 @@
+.wrapper{
+    width: 100%;
+    overflow: auto;
+}
+
+.card{
+    max-width: 10rem;
+    min-width: 5rem;
+    margin: 2rem;
+    text-align: center;
+}
+
+.heading {
+    margin: 2rem;
+    text-align: center;
+}
+
+.buttons{
+    padding: 2rem;
+}
+
+.horizontal{
+    display: flex;
+    flex-flow: wrap;
+}
+
+table{
+    table-layout: fixed;
+    padding-left: 1.5rem;
+    width: 100%;
+}
+
+.headings td{
+    padding: 0.5rem
+}

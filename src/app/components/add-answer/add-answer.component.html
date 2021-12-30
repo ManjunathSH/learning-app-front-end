@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Add Answer</h1>
+<div mat-dialog-content>
+    <p>Add Answer Details</p>
+    <p>
+        Question: {{question.questionText}}
+    </p>
+    <mat-form-field appearance="fill">
+        <mat-label>Answer Text</mat-label>
+        <input matInput [(ngModel)]="answerText">
+    </mat-form-field>
+    <app-file-upload (messageEvent)="messageReceived($event)"></app-file-upload>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button (click)="onSave()" cdkFocusInitial>Save</button>
+</div>

@@ -1,0 +1,19 @@
+<h1 mat-dialog-title>Add Subject</h1>
+<div mat-dialog-content>
+    <p>Enter Subject Details</p>
+    <p>
+        Board Name: {{selectedBoard.boardName}}
+    </p>
+    <p>
+        Class: {{selectedClass}}
+    </p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Subject Name</mat-label>
+        <input matInput [(ngModel)]="subjectName">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button (click)="onSave()" cdkFocusInitial>Save</button>
+</div>

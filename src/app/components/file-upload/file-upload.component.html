@@ -1,0 +1,28 @@
+<div class="fileUpload">
+    <div class="select">
+        <input hidden type="file" id="file-input" accept="video/*" (change)="onSelectFile($event)" #inputFile />
+        <button mat-raised-button color="primary" (click)="inputFile.click()">
+            Select File
+        </button>
+        
+        <p style="margin: 0.5rem;">
+            {{file?.name}}
+        </p>
+    </div>
+    <div class="upload">
+        <button mat-raised-button (click)="onUpload()" [disabled]="!file" class="btn btn-success">
+            Upload
+        </button>
+
+        <div class="progress">
+
+            <mat-progress-bar class="progress-bar" mode="determinate" [value]="uploadProgress" *ngIf="uploadProgress">
+                
+            </mat-progress-bar>
+
+            <button mat-mini-fab color="warn" *ngIf="uploadProgress" >
+                <mat-icon class="cancel-upload" (click)="cancelUpload()">cancel</mat-icon>
+            </button>
+        </div>
+    </div>
+</div>

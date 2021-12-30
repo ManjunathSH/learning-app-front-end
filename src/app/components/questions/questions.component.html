@@ -1,0 +1,70 @@
+<h3 class="heading">Questions</h3>
+
+<div class="wrapper">
+    <div class="headings">
+        <table >
+            <tr>
+                <td>
+                        <span>
+                            Board: {{subject.board.boardName}}
+                        </span>
+                </td>
+                <td>
+                        <span>
+                            Class: {{subject.className}}
+                        </span>
+                </td>
+                <td>
+                    <button mat-raised-button (click)="addQuestion()" color="primary">Add Question</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <span>
+                        Subject: {{subject.subjectName}}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        Chapter: {{chapter.chapterName}}
+                    </span>
+                </td>
+ 
+            </tr>
+        </table>
+    </div>
+
+    <!-- <mat-card *ngFor="let question of questions" >
+        {{question.questionText}}
+    </mat-card> -->
+
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="questionText">
+                <th mat-header-cell *matHeaderCellDef> Question </th>
+                <td mat-cell *matCellDef="let element"> {{element.questionText}} </td>
+            </ng-container>
+            <ng-container matColumnDef="options">
+                <th mat-header-cell *matHeaderCellDef> Options </th>
+                <td mat-cell *matCellDef="let element" fxLayoutGap="5px" class="buttons">
+                    <button mat-mini-fab color="primary" (click)="view(element)">
+                        <mat-icon>pageview</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="primary" (click)="editQuestion(element)">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-mini-fab color="warn">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+        <mat-paginator [pageSizeOptions]="[5, 10, 20, 50 ,100]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>

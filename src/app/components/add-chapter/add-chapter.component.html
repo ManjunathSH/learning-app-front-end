@@ -1,0 +1,27 @@
+
+<h1 mat-dialog-title>Add Chapter</h1>
+<div mat-dialog-content>
+    <p>Enter Chapter Details</p>
+    <p>
+        Board Name: {{selectedBoard.boardName}}
+    </p>
+    <p>
+        Class: {{selectedClass}}
+    </p>
+    <p>
+        Subject: {{selectedSubject.subjectName}}
+    </p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Chapter Name</mat-label>
+        <input matInput [(ngModel)]="chapterName">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Chapter Number</mat-label>
+        <input matInput [(ngModel)]="chapterNumber">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button (click)="onSave()" cdkFocusInitial>Save</button>
+</div>

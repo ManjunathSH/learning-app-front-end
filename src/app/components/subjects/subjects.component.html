@@ -1,0 +1,48 @@
+<h3 class="heading">Subjects</h3>
+
+<div class="wrapper">
+    <div class="headings">
+        <table >
+            <tr>
+                <td>
+                    <span>
+                        Board: {{selectedBoardName}}
+                    </span>
+                </td>
+                <td>
+                    <span>
+                        Class: {{selectedClass}}
+                    </span>
+                </td>
+                <td>
+                    <button mat-raised-button (click)="addSubject()" color="primary">Add Subject</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="horizontal">
+
+        <mat-card class="card" *ngFor="let subject of subjects" (click)="onSubjectClick(subject)">
+            {{subject.subjectName}}
+        </mat-card>
+
+    </div>
+
+    <div *ngIf="showChapters">
+
+        <div class="heading">
+            Chapters
+        </div>
+        <div class="horizontal">
+        <mat-card class="card" *ngFor="let chapter of selectedSubject.chapters" (click)="onChapterClick(chapter)">
+            {{chapter.chapterName}}
+        </mat-card>
+    </div>
+        <div class="buttons">
+            <button mat-raised-button (click)="addChapter()" color="primary">Add Chapter</button>
+        </div>
+
+    </div>
+</div>
+ 

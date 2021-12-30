@@ -1,0 +1,35 @@
+.heading {
+    margin: 2rem;
+    text-align: center;
+}
+
+.wrapper{
+    width: auto;
+    padding: 2rem;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+}
+
+.headings td{
+    padding: 0.5rem
+}
+
+.buttons button{
+    margin: 0.5rem;
+}
+
+
+.mat-column-questionText {
+    word-wrap: break-word !important;
+    white-space: unset !important;
+    flex: 0 0 28% !important;
+    width: 75% !important;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
+  
+  }
