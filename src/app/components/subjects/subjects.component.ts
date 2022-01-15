@@ -95,7 +95,10 @@ export class SubjectsComponent implements OnInit {
       console.log('The dialog was closed');
       console.log(result)
       if(result)
+        if(!this.selectedSubject.chapters)
+          this.selectedSubject.chapters = new Array<Chapter>()
         this.selectedSubject.chapters.push(result)
+
     });
   }
 }

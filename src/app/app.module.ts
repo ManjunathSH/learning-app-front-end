@@ -38,6 +38,7 @@ import { AddSubjectComponent } from './components/add-subject/add-subject.compon
 import { AddChapterComponent } from './components/add-chapter/add-chapter.component';
 import { AnswersComponent } from './components/answers/answers.component';
 import { AddAnswerComponent } from './components/add-answer/add-answer.component';
+import { AddQuestionComponent } from './components/add-question/add-question.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AddAnswerComponent } from './components/add-answer/add-answer.component
     AddSubjectComponent,
     AddChapterComponent,
     AnswersComponent,
-    AddAnswerComponent
+    AddAnswerComponent,
+    AddQuestionComponent,
   ],
   imports: [
     BrowserModule,

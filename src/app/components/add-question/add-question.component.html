@@ -1,0 +1,21 @@
+
+<h1 mat-dialog-title>Add Question</h1>
+<div mat-dialog-content>
+    <p>Enter Question Details</p>
+    <p>
+        Chapter Name: {{selectedChapter.chapterName}}
+    </p>
+
+    <mat-form-field appearance="fill">
+        <mat-label>Question Text</mat-label>
+        <input matInput [(ngModel)]="questionText">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Question Tags</mat-label>
+        <input matInput [(ngModel)]="questionTags">
+    </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button (click)="onSave()" cdkFocusInitial>Save</button>
+</div>

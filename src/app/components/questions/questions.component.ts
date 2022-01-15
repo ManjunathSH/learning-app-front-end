@@ -5,6 +5,8 @@ import { Chapter } from 'src/app/model/chapter';
 import { GetService } from 'src/app/services/http/get/get.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { Subject } from 'src/app/model/subject';
+import { MatDialog } from '@angular/material/dialog';
+import { AddQuestionComponent } from '../add-question/add-question.component';
 
 @Component({
   selector: 'app-questions',
@@ -19,7 +21,7 @@ export class QuestionsComponent implements OnInit {
   dataSource : MatTableDataSource<Question> 
   displayedColumns: string[] = ['questionText', 'options'];
 
-  constructor(private _router: Router, private getService: GetService) { 
+  constructor(private _router: Router, private getService: GetService, private dialog: MatDialog) { 
     let stateParams = this._router.getCurrentNavigation().extras.state
     if(stateParams){
       localStorage.setItem('selectedSubject', JSON.stringify(stateParams))
@@ -53,8 +55,20 @@ export class QuestionsComponent implements OnInit {
   }
 
   addQuestion(){
+    const dialogRef = this.dialog.open(AddQuestionComponent, {
+      width: '300px',
+      data: {selectedChapter: this.chapter},
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result)
+      if(result)
+        this.questions.push(result)
+        this.dataSource.data = this.questions
+    });
   }
+
   editQuestion(element: Question){
     console.log(element)
   }
